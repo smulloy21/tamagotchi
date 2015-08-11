@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+  text-align: center;
+}
+
+img {
+  height: 15em;
+  width: 15em;
+  margin: 3em;
+}
+
+.btn-div {
+  width: 50%
+  margin: 0 auto;
+}
+
+button {
+  height: 3em;
+  width: 5em;
+  display: inline;
+  margin: 1em 1em;
+}
+form {
+  display: inline;
+}

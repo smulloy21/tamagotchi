@@ -1,26 +1,37 @@
 <meta http-equiv="refresh" content="5" />
 <h2><%= @@name %></h2>
 
-<form action="/feed" method="post">
-  <button type="submit" class="btn btn-info">Feed</button>
-</form>
+<% if @@my_pet.is_alive() %>
+  <img src="img/tamagotchi.png" alt="tamagotchi">
+<% else %>
+  <img src="img/dead.png" alt="dead tamogatchi" />
+<% end %>
 
-<form action="/sleep" method="post">
-  <button type="submit" class="btn btn-info">Sleep</button>
-</form>
 
-<form action="/play" method="post">
-  <button type="submit" class="btn btn-info">Play</button>
-</form>
 
-<form action="/clean" method="post">
-  <button type="submit" class="btn btn-info">Clean</button>
-</form>
+<div class="btn-div">
+  <form action="/feed" method="post">
+    <button type="submit" class="btn btn-info">Feed</button>
+  </form>
 
-<form action="/time" method="post">
-  <!-- <button type="submit" class="btn btn-info">Time Passing</button>
-</form> -->
+  <form action="/sleep" method="post">
+    <button type="submit" class="btn btn-info">Sleep</button>
+  </form>
 
+  <form action="/play" method="post">
+    <button type="submit" class="btn btn-info">Play</button>
+  </form>
+
+  <form action="/clean" method="post">
+    <button type="submit" class="btn btn-info">Clean</button>
+  </form>
+</div>
+  <!-- <form action="/time" method="post"> -->
+    <!-- <button type="submit" class="btn btn-info">Time Passing</button>
+  </form> -->
+<br>
+<br>
+<br>
 <% if @@my_pet.is_alive() %>
 
 <h3><%= @@name %>'s food level is: <%= @@my_pet.food_level() %></h3>

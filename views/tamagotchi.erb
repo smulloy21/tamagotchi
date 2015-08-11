@@ -2,7 +2,11 @@
 <h2><%= @@name %></h2>
 
 <% if @@my_pet.is_alive() %>
-  <img src="img/tamagotchi.png" alt="tamagotchi">
+  <%if @@my_pet.happy_level() > 5 %>
+    <img src="img/tamagotchi.png" alt="tamagotchi">
+  <% else %>
+    <img src="img/sad.png" alt="sad tamagotchi" />
+  <% end %>
 <% else %>
   <img src="img/dead.png" alt="dead tamogatchi" />
 <% end %>

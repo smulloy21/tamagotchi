@@ -20,8 +20,16 @@
   <button type="submit" class="btn btn-info">Time Passing</button>
 </form>
 
+<% if @@my_pet.is_alive() %>
+
 <h3><%= @@name %>'s food level is: <%= @@my_pet.food_level() %></h3>
 <h3><%= @@name %>'s sleep level is: <%= @@my_pet.sleep_level() %></h3>
 <h3><%= @@name %>'s play level is: <%= @@my_pet.play_level() %></h3>
 <h3><%= @@name %>'s clean level is: <%= @@my_pet.clean_level() %></h3>
 <h3><%= @@name %>'s happy level is: <%= @@my_pet.happy_level() %></h3>
+
+<% else %>
+
+<h3><%= @@name %> has died</h3>
+
+<% end %>

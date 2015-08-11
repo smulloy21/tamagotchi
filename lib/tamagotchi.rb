@@ -35,4 +35,8 @@ class Tamagotchi
   define_method(:is_alive) do
     @food > 0
   end
+
+  define_method(:set_food_level) do |food|
+    @food = food
+  end
 end

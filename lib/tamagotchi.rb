@@ -41,10 +41,18 @@ class Tamagotchi
   end
 
   define_method(:time_passes) do
-    @food -= 1
-    @sleep -= 1
-    @play -= 1
-    @clean -= 1
+    if @food > 0
+      @food -= 1
+    end
+    if @sleep > 0
+      @sleep -= 1
+    end
+    if @play > 0
+      @play -= 1
+    end
+    if @clean > 0
+      @clean -= 1
+    end
     happy_level()
   end
 

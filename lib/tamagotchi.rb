@@ -39,4 +39,12 @@ class Tamagotchi
   define_method(:set_food_level) do |food|
     @food = food
   end
+
+  define_method(:time_passes) do
+    @food -= 1
+    @sleep -= 1
+    @play -= 1
+    @clean -= 1
+    @happy -= 1
+  end
 end

@@ -103,5 +103,23 @@ describe(Tamagotchi) do
       my_pet.set_clean_level(9)
       expect(my_pet.happy_level()).to(eq(9))
     end
+    it('sets the happy level') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.set_sleep_level(9)
+      my_pet.set_play_level(3)
+      my_pet.play()
+      my_pet.set_clean_level(5)
+      expect(my_pet.happy_level()).to(eq(6))
+    end
+    it('sets the happy level') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.set_sleep_level(3)
+      my_pet.sleep()
+      my_pet.set_play_level(3)
+      my_pet.play()
+      my_pet.set_clean_level(1)
+      my_pet.clean()
+      expect(my_pet.happy_level()).to(eq(5))
+    end
   end
 end

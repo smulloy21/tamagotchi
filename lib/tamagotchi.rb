@@ -31,4 +31,8 @@ class Tamagotchi
   define_method(:happy_level) do
     @happy
   end
+
+  define_method(:is_alive) do
+    @food > 0
+  end
 end

@@ -13,4 +13,11 @@ describe(Tamagotchi) do
       expect(my_pet.happy_level()).to(eq(10))
     end
   end
+
+  describe('#is_alive') do
+    it('returns true if pet is alive') do
+      my_pet = Tamagotchi.new("t-rex")
+      expect(my_pet.is_alive()).to(eq(true))
+    end
+  end
 end

@@ -74,4 +74,15 @@ class Tamagotchi
   define_method(:set_play_level) do |play|
     @play = play
   end
+
+  define_method(:set_clean_level) do |clean|
+    @clean = clean
+  end
+
+  define_method(:clean) do
+    @clean += 5
+    if @clean > 10
+      @clean = 10
+    end
+  end
 end

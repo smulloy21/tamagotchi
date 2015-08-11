@@ -80,4 +80,18 @@ describe(Tamagotchi) do
       expect(my_pet.play_level()).to(eq(10))
     end
   end
+
+  describe('#clean') do
+    it('increases clean level by 5') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.set_clean_level(4)
+      my_pet.clean()
+      expect(my_pet.clean_level()).to(eq(9))
+    end
+    it('never goes over clean level 10') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.clean()
+      expect(my_pet.clean_level()).to(eq(10))
+    end
+  end
 end

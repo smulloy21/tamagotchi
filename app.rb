@@ -5,6 +5,7 @@ require('./lib/tamagotchi')
 
 get('/') do
   @@update = true
+  @@sleep = false
   erb(:index)
 end
 
@@ -18,7 +19,6 @@ get('/tamagotchi') do
   if @@update
     @@my_pet.time_passes()
   end
-
   @@update = true
   erb(:tamagotchi)
 end
@@ -32,6 +32,7 @@ end
 post('/sleep') do
   @@my_pet.sleep()
   @@update = false
+  @@sleep = true
   redirect('/tamagotchi')
 end
 

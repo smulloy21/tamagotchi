@@ -64,4 +64,14 @@ class Tamagotchi
       @sleep = 10
     end
   end
+
+  define_method(:play) do
+    if @play < 10
+      @play += 1
+    end
+  end
+
+  define_method(:set_play_level) do |play|
+    @play = play
+  end
 end

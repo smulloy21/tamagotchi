@@ -66,4 +66,18 @@ describe(Tamagotchi) do
       expect(my_pet.sleep_level()).to(eq(10))
     end
   end
+
+  describe('#play') do
+    it('increases play level by 1') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.set_play_level(8)
+      my_pet.play()
+      expect(my_pet.play_level()).to(eq(9))
+    end
+    it('never goes over play level 10') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.play()
+      expect(my_pet.play_level()).to(eq(10))
+    end
+  end
 end

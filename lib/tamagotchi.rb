@@ -29,7 +29,7 @@ class Tamagotchi
   end
 
   define_method(:happy_level) do
-    @happy
+    @happy = (@sleep + @play + @clean)/3
   end
 
   define_method(:is_alive) do
@@ -45,7 +45,7 @@ class Tamagotchi
     @sleep -= 1
     @play -= 1
     @clean -= 1
-    @happy -= 1
+    happy_level()
   end
 
   define_method(:feed) do
@@ -63,12 +63,14 @@ class Tamagotchi
     if @sleep > 10
       @sleep = 10
     end
+    happy_level()
   end
 
   define_method(:play) do
     if @play < 10
       @play += 1
     end
+    happy_level()
   end
 
   define_method(:set_play_level) do |play|
@@ -84,5 +86,6 @@ class Tamagotchi
     if @clean > 10
       @clean = 10
     end
+    happy_level()
   end
 end

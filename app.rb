@@ -4,6 +4,7 @@ also_reload('lib/**/*.rb')
 require('./lib/tamagotchi')
 
 get('/') do
+  @@update = true
   erb(:index)
 end
 
@@ -14,30 +15,40 @@ post('/tamagotchi') do
 end
 
 get('/tamagotchi') do
+  if @@update
+    @@my_pet.time_passes()
+  end
+
+  @@update = true
   erb(:tamagotchi)
 end
 
 post('/feed') do
   @@my_pet.feed()
+  @@update = false
   redirect('/tamagotchi')
 end
 
 post('/sleep') do
   @@my_pet.sleep()
+  @@update = false
   redirect('/tamagotchi')
 end
 
 post('/play') do
   @@my_pet.play()
+  @@update = false
   redirect('/tamagotchi')
 end
 
 post('/clean') do
   @@my_pet.clean()
+  @@update = false
   redirect('/tamagotchi')
 end
 
-post('/time') do
-  @@my_pet.time_passes()
-  redirect('/tamagotchi')
-end
+# post('/time') do
+#   @@my_pet.time_passes()
+#   @@update = false
+#   redirect('/tamagotchi')
+# end

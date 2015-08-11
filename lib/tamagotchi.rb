@@ -47,4 +47,21 @@ class Tamagotchi
     @clean -= 1
     @happy -= 1
   end
+
+  define_method(:feed) do
+    if @food < 10
+      @food += 1
+    end
+  end
+
+  define_method(:set_sleep_level) do |sleep|
+    @sleep = sleep
+  end
+
+  define_method(:sleep) do
+    @sleep += 4
+    if @sleep > 10
+      @sleep = 10
+    end
+  end
 end

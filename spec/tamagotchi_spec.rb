@@ -38,4 +38,22 @@ describe(Tamagotchi) do
       expect(my_pet.happy_level()).to(eq(9))
     end
   end
+
+  describe('#feed') do
+    it('increases food level by 1') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.time_passes()
+      my_pet.feed()
+      expect(my_pet.food_level()).to(eq(10))
+    end
+  end
+
+  describe('#sleep') do
+    it('increases sleep level by 4') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.set_sleep_level(5)
+      my_pet.sleep()
+      expect(my_pet.sleep_level()).to(eq(9))
+    end
+  end
 end

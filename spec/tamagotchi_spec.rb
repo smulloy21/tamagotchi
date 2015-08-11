@@ -46,6 +46,11 @@ describe(Tamagotchi) do
       my_pet.feed()
       expect(my_pet.food_level()).to(eq(10))
     end
+    it('never goes over food level 10') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.feed()
+      expect(my_pet.food_level()).to(eq(10))
+    end
   end
 
   describe('#sleep') do
@@ -54,6 +59,11 @@ describe(Tamagotchi) do
       my_pet.set_sleep_level(5)
       my_pet.sleep()
       expect(my_pet.sleep_level()).to(eq(9))
+    end
+    it('never goes over food level 10') do
+      my_pet = Tamagotchi.new("t-rex")
+      my_pet.sleep()
+      expect(my_pet.sleep_level()).to(eq(10))
     end
   end
 end

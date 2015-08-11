@@ -38,11 +38,24 @@
 <br>
 <% if @@my_pet.is_alive() %>
 
-<h3><%= @@name %>'s food level is: <%= @@my_pet.food_level() %></h3>
+  <% if @@my_pet.food_level() < 6 %>
+    <h3><%= @@name %> is hungry</h3>
+  <% end %>
+  <% if @@my_pet.sleep_level() < 6 %>
+    <h3><%= @@name %> is sleepy</h3>
+  <% end %>
+  <% if @@my_pet.play_level() < 6 %>
+    <h3><%= @@name %> wants to play</h3>
+  <% end %>
+  <% if @@my_pet.clean_level() < 6 %>
+    <h3><%= @@name %> needs a bath</h3>
+  <% end %>
+
+<!-- <h3><%= @@name %>'s food level is: <%= @@my_pet.food_level() %></h3>
 <h3><%= @@name %>'s sleep level is: <%= @@my_pet.sleep_level() %></h3>
 <h3><%= @@name %>'s play level is: <%= @@my_pet.play_level() %></h3>
 <h3><%= @@name %>'s clean level is: <%= @@my_pet.clean_level() %></h3>
-<h3><%= @@name %>'s happy level is: <%= @@my_pet.happy_level() %></h3>
+<h3><%= @@name %>'s happy level is: <%= @@my_pet.happy_level() %></h3> -->
 
 <% else %>
 

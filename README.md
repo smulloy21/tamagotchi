@@ -8,6 +8,8 @@
 
 A simple tamagotchi game to play for fun
 
+link on heroku: tamagatchi-game.herokuapp.com
+
 _Practice building custom classes and methods, and posting as well as getting http_
 
 

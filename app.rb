@@ -6,6 +6,9 @@ require('./lib/tamagotchi')
 get('/') do
   @@update = true
   @@sleep = false
+  @@playing = false
+  @@feeding = false
+  @@bath = false
   erb(:index)
 end
 
@@ -26,6 +29,7 @@ end
 post('/feed') do
   @@my_pet.feed()
   @@update = false
+  @@feeding = true
   redirect('/tamagotchi')
 end
 
@@ -39,12 +43,14 @@ end
 post('/play') do
   @@my_pet.play()
   @@update = false
+  @@playing = true
   redirect('/tamagotchi')
 end
 
 post('/clean') do
   @@my_pet.clean()
   @@update = false
+  @@bath = true
   redirect('/tamagotchi')
 end
 

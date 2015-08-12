@@ -57,8 +57,9 @@ class Tamagotchi
   end
 
   define_method(:feed) do
+    @food += 2
     if @food < 10
-      @food += 1
+      @food = 10
     end
   end
 
@@ -75,8 +76,9 @@ class Tamagotchi
   end
 
   define_method(:play) do
+    @play += 2
     if @play < 10
-      @play += 1
+      @play = 10
     end
     happy_level()
   end

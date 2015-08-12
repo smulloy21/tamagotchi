@@ -1,19 +1,20 @@
 body {
   background-color: white;
   text-align: center;
+  font-family: helvetica;
 }
-
+.container {
+  margin: 2em auto;
+}
 img {
   height: 15em;
   width: 15em;
   margin: 3em;
 }
-
 .btn-div {
   width: 50%
   margin: 0 auto;
 }
-
 button {
   height: 3em;
   width: 5em;
@@ -22,4 +23,16 @@ button {
 }
 form {
   display: inline;
+}
+h1 {
+  font-size: 3em;
+  font-weight: 300;
+}
+h2, h3 {
+  font-weight: 200;
+}
+label {
+  font-size: 1.5em;
+  margin: 1em;
+  font-weight: 200;
 }

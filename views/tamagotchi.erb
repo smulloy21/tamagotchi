@@ -1,11 +1,19 @@
-<meta http-equiv="refresh" content="5" />
-
 <h2><%= @@name %></h2>
 
 <% if @@my_pet.is_alive() %>
-  <%if @@sleep == true %>
+  <meta http-equiv="refresh" content="5" />
+  <% if @@sleep == true %>
     <img src="img/sleep.png" alt="asleep tamogatchi" />
     <% @@sleep = false %>
+  <% elsif @@feeding == true %>
+    <img src="img/eating.png" alt="eating tamogatchi" />
+    <% @@feeding = false %>
+  <% elsif @@bath == true %>
+    <img src="img/clean.png" alt="clean tamogatchi" />
+    <% @@bath = false %>
+  <%elsif @@playing == true %>
+    <img src="img/play.png" alt="playing tamogatchi" />
+    <% @@playing = false %>
   <%elsif @@my_pet.happy_level() > 5 %>
     <img src="img/tamagotchi.png" alt="tamagotchi">
   <% else %>
@@ -55,14 +63,15 @@
     <h3><%= @@name %> needs a bath</h3>
   <% end %>
 <br><br>
-<h3><%= @@name %>'s food level is: <%= @@my_pet.food_level() %></h3>
+<!-- <h3><%= @@name %>'s food level is: <%= @@my_pet.food_level() %></h3>
 <h3><%= @@name %>'s sleep level is: <%= @@my_pet.sleep_level() %></h3>
 <h3><%= @@name %>'s play level is: <%= @@my_pet.play_level() %></h3>
 <h3><%= @@name %>'s clean level is: <%= @@my_pet.clean_level() %></h3>
-<h3><%= @@name %>'s happy level is: <%= @@my_pet.happy_level() %></h3>
+<h3><%= @@name %>'s happy level is: <%= @@my_pet.happy_level() %></h3> -->
 
 <% else %>
 
 <h3><%= @@name %> has died</h3>
+<h3><a href="/">Click here to play again</a></h3>
 
 <% end %>
